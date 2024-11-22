@@ -1,0 +1,3 @@
+[console_scripts]
+sallu-bhai = sallu_bhai.cli_tool:main
+

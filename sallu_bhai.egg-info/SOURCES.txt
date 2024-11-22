@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.py
+sallu_bhai/__init__.py
+sallu_bhai/cli_tool.py
+sallu_bhai/core.py
+sallu_bhai.egg-info/PKG-INFO
+sallu_bhai.egg-info/SOURCES.txt
+sallu_bhai.egg-info/dependency_links.txt
+sallu_bhai.egg-info/entry_points.txt
+sallu_bhai.egg-info/requires.txt
+sallu_bhai.egg-info/top_level.txt
