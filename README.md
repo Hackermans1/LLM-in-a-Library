@@ -33,7 +33,13 @@ You can also specify a model and list available models:
 
 You can also use sallu-bhai programmatically:
 
-``` from sallu_bhai.core import execute_natural_language_command  # Execute a query  command = execute_natural_language_command("List all Python files in the current directory")  print(command)  # Output: find . -name "*.py"   ```
+```
+ from sallu_bhai.core import execute_natural_language_command 
+# Execute a query
+command = execute_natural_language_command("List all Python files in the current directory")
+print(command)
+# Output: find . -name "*.py"
+ ```
 
 ### Options
 
