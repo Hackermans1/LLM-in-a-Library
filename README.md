@@ -1,61 +1,96 @@
-Natural Language to Terminal Command AI Library
-Overview
+# A Library with a Brain
 
-This AI library empowers you to interact with your terminal using natural language. By leveraging the power of Large Language Models (LLMs), it seamlessly translates your human-readable commands into precise terminal commands.
+Sallu-Bhai is the version one of the Python library that uses natural language processing (NLP) to convert natural language descriptions into actual command-line interface (CLI) commands. The library utilizes the power of the Ollama LLM (Large Language Model) to process the input and generate accurate CLI commands.
 
-Installation
+## Features
 
-Bash
-pip install nl2terminal
-Use code with caution.
+- **Natural Language to CLI Conversion**: Input a natural language description, and get the exact CLI command.
+- **Dynamic Model Selection**: Automatically selects available LLM models, or you can specify a model to use.
+- **Cross-Platform**: Works on Linux, macOS, and Windows environments where Ollama is installed.
+- **Easy to Integrate**: Can be integrated into any existing CLI-based automation workflows.
 
+## Installation
+
+You can install `sallu-bhai` directly from PyPI:
+
+```bash
+pip install sallu-bhai
+```
 Usage
+-----
 
-Python
-from nl2terminal import NL2Terminal
+### Command Line Tool
 
-# Initialize the NL2Terminal object
-nl2t = NL2Terminal()
+To use sallu-bhai as a CLI tool, simply run:
 
-# Convert a natural language command
-terminal_command = nl2t.convert("list all files in the current directory")
+```   sallu-bhai "List all files in the current directory"   ```
 
-# Execute the command
-print(terminal_command)  # Output: ls -la
-Use code with caution.
+You can also specify a model and list available models:
 
-Key Features
+```sallu-bhai -m  "List all files in the current directory"  sallu-bhai -l  # List available models   ```
 
-Natural Language Understanding: Accurately interprets a wide range of natural language commands.
-Command Generation: Translates commands into accurate terminal syntax.
-Contextual Awareness: Leverages context to provide more precise commands.
-Error Handling: Identifies and handles potential errors in command execution.
-Customization: Allows for customization of the LLM model and command execution.
-Example Use Cases
+### Programmatic Usage
 
-Automation: Automate repetitive tasks by creating scripts from natural language descriptions.
-Scripting: Rapidly prototype scripts without needing to learn complex syntax.
-Education: Teach users about terminal commands through natural language interactions.
-Accessibility: Make terminal usage more accessible to users with varying technical expertise.
+You can also use sallu-bhai programmatically:
+
+``` from sallu_bhai.core import execute_natural_language_command  # Execute a query  command = execute_natural_language_command("List all Python files in the current directory")  print(command)  # Output: find . -name "*.py"   ```
+
+### Options
+
+*   \-m, --model : Specify which model to use.
+    
+*   \-l, --list-models: List available models in Ollama.
+    
+*   \-v, --version: Display the current version of the library.
+    
+
+Requirements
+------------
+
+*   Python 3.6+
+    
+*   Ollama installed and configured on your machine.
+    
+
+To install Ollama, follow the instructions on their official website: [Ollama](https://ollama.com/).
+
+Troubleshooting
+---------------
+
+*   **Model not found**: Ensure that the model is available on your system. You can run ollama list to check available models or use ollama pull to pull a specific model.
+    
+*   **No models available**: If no models are listed, make sure Ollama is correctly installed and configured.
+    
+
+Future Upgrades
+---------------
+
+*   **Multi-Command Support**: Ability to parse multiple commands from a single input description.
+    
+*   **Advanced Query Parsing**: Integrating advanced NLP features to better handle more complex queries, including conditional logic.
+    
+*   **Improved CLI Options**: Adding more flexible command-line options for advanced users (e.g., logging, model performance tuning).
+    
+*   **Cloud Model Integration**: Support for running models hosted in the cloud for users without local access to heavy models.
+    
+*   **Custom Model Support**: Ability for users to add their custom models into the library for specific use cases.
+    
+*   **Error Handling Enhancements**: More comprehensive error messages to assist with troubleshooting and debugging.
+    
+
 Contributing
+------------
 
-We welcome contributions to improve this library. Please feel free to submit issues, pull requests, or feature requests.
+We welcome contributions! If you have suggestions for improvements or would like to contribute new features, feel free to fork the repository, create a branch, and submit a pull request. Please ensure your code passes all tests and adheres to the existing code style.
 
 License
+-------
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-Additional Considerations
+Acknowledgements
+----------------
 
-LLM Model: The performance of the library depends on the underlying LLM model. Consider using a powerful LLM for optimal results.
-Command Execution: The library can be integrated with various command execution methods, such as subprocess or shell scripting.
-Security: Exercise caution when executing generated commands, especially if they involve sensitive operations.
-Continuous Improvement: As LLM technology advances, we will continue to enhance the capabilities of this library.
-By leveraging this AI library, you can significantly streamline your terminal interactions and boost your productivity.
-
-
-
-
-
-
-
+*   Ollama for providing the powerful models that drive this project.
+    
+*   Python community and open-source developers for the tools that made this possible
