@@ -27,7 +27,8 @@ To use sallu-bhai as a CLI tool, simply run:
 
 You can also specify a model and list available models:
 
-```sallu-bhai -m  "List all files in the current directory"  sallu-bhai -l  # List available models   ```
+```sallu-bhai -m  "List all files in the current directory"  ```
+```sallu-bhai -l  # List available models   ```
 
 ### Programmatic Usage
 
